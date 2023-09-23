@@ -1,0 +1,16 @@
+name: A simple Shell Commands
+
+on: [push]
+
+    jobs:
+        run-shell-command:
+            runs-on: ubuntu-18.04
+            steps:
+                - name: checkout
+                  uses: actions/checkout@v3
+                - name: echo string
+                  run: echo "this is my first gitaction wf"
+                - name: multi string command
+                  run: |
+                    node -v
+                    npm -v        
