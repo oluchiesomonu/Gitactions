@@ -1,15 +1,22 @@
 name: A simple Shell Commands
-
 on: [push]
 jobs:
-        run-shell-command:
-            runs-on: latest
-            steps:
-                - name: checkout
-                  uses: actions/checkout@v3
-                - name: echo string
-                  run: echo "this is my first gitaction wf"
-                - name: multi string command
-                  run: |
-                    node -v
-                    npm -v        
+    run-shell-command:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@v3
+        - name: echo string
+          run: echo "this is my first gitaction wf"
+        - name: multi string command
+          run: |
+           node -v
+           npm -v       
+    run-windows-command:
+        runs-on: windows-latest    
+        steps: 
+        - name: Directory
+          run: Get-Location
+        - name: Diretory bash
+          run : pwd
+          shell: bash
