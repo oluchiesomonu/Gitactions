@@ -1,10 +1,9 @@
 name: A simple Shell Commands
 
 on: [push]
-
-    jobs:
+jobs:
         run-shell-command:
-            runs-on: ubuntu-18.04
+            runs-on: latest
             steps:
                 - name: checkout
                   uses: actions/checkout@v3
